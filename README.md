@@ -9,7 +9,7 @@
 Add to your `project.wpl`'s `dependencies`:
 
 ```wipple
-botball : git "https://github.com/tyngsboroughrobotics/botball" "master"
+botball : git "https://github.com/tyngsboroughrobotics/botball master"
 ```
 
 ## Example
