@@ -1,5 +1,5 @@
 main : "src"
 
 dependencies : {
-    libwallaby : plugin (url (format "https://github.com/wipplelang/wipple/releases/latest/download/_.wplplugin" host))
+    libwallaby : plugin (url (format "https://github.com/tyngsboroughrobotics/libwallaby-wipple/releases/latest/download/_.wplplugin" host))
 }
