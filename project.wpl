@@ -1,4 +1,4 @@
-main : "src"
+main : "src/main"
 
 dependencies : {
     libwallaby : url "https://github.com/tyngsboroughrobotics/libwallaby-wipple/releases/latest/download/libwallaby.zip"
