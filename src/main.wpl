@@ -1,1 +1,47 @@
-use libwallaby
+Motor : data {
+	port :: Number
+	speed :: Number
+}
+
+Wheels : data {
+	left :: Motor
+	right :: Motor
+}
+
+drive : external "botball" "drive" :: (_ -> Number -> Number -> Number -> ())
+turn : external "botball" "turn" :: (_ -> Number -> Number -> Number -> ())
+
+Servo : data {
+	port :: Number
+	speed :: Number
+}
+
+position : external "botball" "position" :: (Servo -> Number -> ())
+
+Digital-Sensor : data {
+	port :: Number
+}
+
+Analog-Sensor : data {
+	port :: Number
+}
+
+read : external "botball" "read" :: (_ -> _)
+
+-- TODO: Camera
+
+Create : data {}
+create : Create {}
+
+step : name -> body -> ()
+
+wait : external "botball" "wait" :: (Number -> Number -> ())
+
+wait-for-light-on : external "botball" "wait-for-light-on" :: (Analog-Sensor -> ())
+
+mm : 1
+cm : 10
+m : 100
+sec : -1
+ms : -1000
+deg : 1

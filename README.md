@@ -6,45 +6,6 @@
 
 ## Installation
 
-Add to your `project.wpl`'s `dependencies`:
-
 ```wipple
-botball : git "https://github.com/tyngsboroughrobotics/botball"
+botball : file "https://cdn.jsdelivr.net/gh/tyngsboroughrobotics/botball/src/botball.wpl"
 ```
-
-## Example
-
-```wipple
-use botball
-
-arm-claw : servo {
-    port : 0
-    on : 1200
-    off : 1900
-}
-
-backside-claw : servo {
-    port : 3
-    on : 1400
-    off : 700
-}
-
-...
-
-step "reset everything" {
-    turn arm-claw on
-    turn backside-claw on
-    ...
-}
-
-step "face white cylinder" {
-    turn wheels left 25 deg
-    ...
-}
-
-...
-```
-
-## Documentation
-
-Work in progress!
