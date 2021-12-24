@@ -1,47 +1,24 @@
-Motor : data {
-	port :: Number
-	speed :: Number
+use "src/botball.wpl"
+
+left-wheel : Motor {
+    port : 0
+    speed : 1
 }
 
-Wheels : data {
-	left :: Motor
-	right :: Motor
+right-wheel : Motor {
+    port : 1
+    speed : 1
 }
 
-drive : external "botball" "drive" :: (_ -> Number -> Number -> Number -> ())
-turn : external "botball" "turn" :: (_ -> Number -> Number -> Number -> ())
-
-Servo : data {
-	port :: Number
-	speed :: Number
+wheels : Wheels {
+    left : left-wheel
+    right : right-wheel
+    left-offset : 1
+    right-offset : 1
 }
 
-position : external "botball" "position" :: (Servo -> Number -> ())
-
-Digital-Sensor : data {
-	port :: Number
+step "Testing" {
+    drive wheels forward 5 cm
+    drive wheels reverse 2 cm
+    -- turn wheels left 90 deg
 }
-
-Analog-Sensor : data {
-	port :: Number
-}
-
-read : external "botball" "read" :: (_ -> _)
-
--- TODO: Camera
-
-Create : data {}
-create : Create {}
-
-step : name -> body -> ()
-
-wait : external "botball" "wait" :: (Number -> Number -> ())
-
-wait-for-light-on : external "botball" "wait-for-light-on" :: (Analog-Sensor -> ())
-
-mm : 1
-cm : 10
-m : 100
-sec : -1
-ms : -1000
-deg : 1
